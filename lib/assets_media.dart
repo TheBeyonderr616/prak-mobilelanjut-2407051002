@@ -16,7 +16,7 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
       await player.pause();
     } else {
       await player.play(
-        AssetSource('audios/music.mp3'),
+        AssetSource('audio/music.mp3'),
       );
     }
 
@@ -60,7 +60,7 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
                 children: [
                   ClipOval(
                     child: Image.asset(
-                      'assets/images/profile.jpeg',
+                      'assets/images/cuking.jpg',
                       width: 120,
                       height: 120,
                       fit: BoxFit.cover,
@@ -69,7 +69,7 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
 
                   const SizedBox(height: 15),
                   const Text(
-                    'Muhammad Ilham Bintang F. E',
+                    'Syawal Putra Akbar',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 22,
