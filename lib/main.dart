@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'coloumn_widget.dart';
-// import 'row_widget.dart';
-// import 'first_widget.dart';
-// import 'form_widget.dart';
-// import 'assets_media.dart';
-import 'app_theme.dart';
-import 'responsive_profile.dart';
+import 'home_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -32,13 +24,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Responsive Profile',
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: themeMode,
-      home: ResponsiveProfilePage(
-        onThemeChanged: toggleTheme,
-      ),
+      theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
+      home: const HomePage(),
     );
   }
 }
