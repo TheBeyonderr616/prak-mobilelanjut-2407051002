@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'api_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Praktikum Mobile Lanjut'),
-        ),
-        body: const Center(
-          child: Text('Halo Nama Saya Syawal Putra Akbar'),
-        ),
+      debugShowCheckedModeBanner: false,
+      title: 'REST API Praktikum',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: const ApiPage(),
     );
   }
 }
