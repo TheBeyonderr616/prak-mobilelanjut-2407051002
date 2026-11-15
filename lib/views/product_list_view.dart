@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../providers/product_provider.dart';
 import '../widgets/product_card.dart';
 import 'product_detail_view.dart';
+import 'location_view.dart'; // Tambahan import Pertemuan 11
 
 class ProductListView extends StatefulWidget {
   const ProductListView({super.key});
@@ -16,7 +17,6 @@ class _ProductListViewState extends State<ProductListView> {
   @override
   void initState() {
     super.initState();
-    // Menjalankan permintaan pengambilan data setelah proses perenderan awal selesai
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<ProductProvider>().fetchProducts();
     });
@@ -32,6 +32,19 @@ class _ProductListViewState extends State<ProductListView> {
             icon: const Icon(Icons.refresh),
             onPressed: () {
               context.read<ProductProvider>().fetchProducts();
+            },
+          ),
+          // Tambahan tombol lokasi Pertemuan 11
+          IconButton(
+            icon: const Icon(Icons.location_on),
+            tooltip: 'Informasi Lokasi',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const LocationView(),
+                ),
+              );
             },
           ),
         ],
